@@ -1,0 +1,20 @@
+Explicação 
+exercicio_1
+	sem erros na execução.
+	as entradas de duas 2 portas ANDs com uma OR, onde suas entradas na primeira AND b e c são negadas e na segunda apenas b é negada, e uma saída y. No .tb ele gera os estimulos testando cada entrada com as possibilidades, com a saida sendo 0 apenas quando todas as entradas sao 1
+
+
+exercicio_2 
+
+	sem erros na execução
+	É apresentado o mesmo design do primeiro exercicio, só que a forma de estimulo e .tb é diferente, pois sua saída está sendo comparada para verificar se está correta. 
+
+
+exercicio_3
+ 	sem erros na execução
+ 	É apresentado o mesmo design do primeiro exercicio, só que a forma de estimulo .tb é diferente, aqui está sendo aplicado dentro de um registrador com 32bits que testa um array de vetores de 4 bits
+
+
+exercicio_4
+	sem erros na execução
+	resultado esperado falhou, pois a operação esperada seria uma OR mas a executada não corresponde. 

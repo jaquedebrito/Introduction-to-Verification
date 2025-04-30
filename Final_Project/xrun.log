@@ -1,0 +1,928 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Apr 30, 2025 at 14:46:06 -03
+xrun
+	ULA.sv
+	ULA_test_vectors_tb.sv
+	-gui
+	-access +rw
+file: ULA.sv
+	module worklib.ULA:sv
+		errors: 0, warnings: 0
+file: ULA_test_vectors_tb.sv
+	package worklib.ula_enhanced_pkg:sv
+		errors: 0, warnings: 0
+	package worklib.testbench_utils_pkg:sv
+		errors: 0, warnings: 0
+	module worklib.ULA_test_vectors_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ula_enhanced_pkg
+		testbench_utils_pkg
+		$unit_0x51d33e01
+		ULA_test_vectors_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ULA:sv <0x7a9062b8>
+			streams:   4, words:  2855
+		worklib.ULA_test_vectors_tb:sv <0x77a14298>
+			streams:  28, words: 59389
+		worklib.ula_enhanced_pkg:sv <0x41050526>
+			streams:  18, words: 13964
+		worklib.testbench_utils_pkg:sv <0x6c0724c1>
+			streams:   7, words:  3011
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                     Instances  Unique
+		Modules:                     2       2
+		Verilog packages:            2       2
+		Registers:                  97     107
+		Scalar wires:                4       -
+		Vectored wires:              5       -
+		Always blocks:               3       3
+		Initial blocks:             12      12
+		Pseudo assignments:          7       -
+		Assertions:                  3       3
+		Covergroup Instances:        0       1
+		Compilation units:           1       1
+		SV Class declarations:       3       3
+		SV Class specializations:    3       3
+		Process Clocks:              1       1
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.ULA_test_vectors_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /usr/local/cds/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm ULA_test_vectors_tb.dut.A ULA_test_vectors_tb.dut.B ULA_test_vectors_tb.dut.CarryOut ULA_test_vectors_tb.dut.ULA_Out ULA_test_vectors_tb.dut.ULA_Sel ULA_test_vectors_tb.dut.clock ULA_test_vectors_tb.dut.next_carry ULA_test_vectors_tb.dut.next_result ULA_test_vectors_tb.dut.reset
+Created probe 1
+xcelium> run
+//----------------------------------------
+// Iniciando testbench ULA Test Vectors
+// Data: 23/02/2025
+// Aluna: Jaqueline Ferreira de Brito
+//----------------------------------------
+
+=== Teste 0 (ADD) ===
+Cálculo: 0x50 + 0x2c = 0x7c (sem carry)
+Valores em decimal:
+A = 80, B = 44, Resultado esperado = 124
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x7c (124)
+
+=== Teste 1 (ADD) ===
+Cálculo: 0x45 + 0x16 = 0x5b (sem carry)
+Valores em decimal:
+A = 69, B = 22, Resultado esperado = 91
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x5b (91)
+
+=== Teste 2 (ADD) ===
+Cálculo: 0xb5 + 0x61 = 0x16 (com carry)
+Valores em decimal:
+A = 181, B = 97, Resultado esperado = 22
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x16 (22)
+
+=== Teste 3 (ADD) ===
+Cálculo: 0x33 + 0x08 = 0x3b (sem carry)
+Valores em decimal:
+A = 51, B = 8, Resultado esperado = 59
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x3b (59)
+
+=== Teste 4 (ADD) ===
+Cálculo: 0x2b + 0x06 = 0x31 (sem carry)
+Valores em decimal:
+A = 43, B = 6, Resultado esperado = 49
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x31 (49)
+
+=== Teste 5 (ADD) ===
+Cálculo: 0xac + 0x9b = 0x47 (com carry)
+Valores em decimal:
+A = 172, B = 155, Resultado esperado = 71
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x47 (71)
+
+=== Teste 6 (ADD) ===
+Cálculo: 0x2e + 0x0b = 0x39 (sem carry)
+Valores em decimal:
+A = 46, B = 11, Resultado esperado = 57
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x39 (57)
+
+=== Teste 7 (ADD) ===
+Cálculo: 0xd9 + 0xc1 = 0x9a (com carry)
+Valores em decimal:
+A = 217, B = 193, Resultado esperado = 154
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x9a (154)
+
+=== Teste 8 (ADD) ===
+Cálculo: 0x33 + 0x09 = 0x3c (sem carry)
+Valores em decimal:
+A = 51, B = 9, Resultado esperado = 60
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x3c (60)
+
+=== Teste 9 (ADD) ===
+Cálculo: 0xbf + 0xbc = 0x7b (com carry)
+Valores em decimal:
+A = 191, B = 188, Resultado esperado = 123
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x7b (123)
+
+=== Teste 10 (ADD) ===
+Cálculo: 0xbd + 0x0a = 0xc7 (sem carry)
+Valores em decimal:
+A = 189, B = 10, Resultado esperado = 199
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xc7 (199)
+
+=== Teste 11 (ADD) ===
+Cálculo: 0xdc + 0xba = 0x96 (com carry)
+Valores em decimal:
+A = 220, B = 186, Resultado esperado = 150
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x96 (150)
+
+=== Teste 12 (ADD) ===
+Cálculo: 0x62 + 0x40 = 0xa2 (sem carry)
+Valores em decimal:
+A = 98, B = 64, Resultado esperado = 162
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xa2 (162)
+
+=== Teste 13 (ADD) ===
+Cálculo: 0xc3 + 0xa2 = 0x65 (com carry)
+Valores em decimal:
+A = 195, B = 162, Resultado esperado = 101
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x65 (101)
+
+=== Teste 14 (ADD) ===
+Cálculo: 0x87 + 0x54 = 0xdb (sem carry)
+Valores em decimal:
+A = 135, B = 84, Resultado esperado = 219
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xdb (219)
+
+=== Teste 15 (ADD) ===
+Cálculo: 0x5f + 0x2f = 0x8e (sem carry)
+Valores em decimal:
+A = 95, B = 47, Resultado esperado = 142
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x8e (142)
+
+=== Teste 16 (ADD) ===
+Cálculo: 0xb7 + 0x7f = 0x36 (com carry)
+Valores em decimal:
+A = 183, B = 127, Resultado esperado = 54
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x36 (54)
+
+=== Teste 17 (ADD) ===
+Cálculo: 0xc3 + 0x17 = 0xda (sem carry)
+Valores em decimal:
+A = 195, B = 23, Resultado esperado = 218
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xda (218)
+
+=== Teste 18 (ADD) ===
+Cálculo: 0x9c + 0x53 = 0xef (sem carry)
+Valores em decimal:
+A = 156, B = 83, Resultado esperado = 239
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xef (239)
+
+=== Teste 19 (ADD) ===
+Cálculo: 0x63 + 0x2d = 0x90 (sem carry)
+Valores em decimal:
+A = 99, B = 45, Resultado esperado = 144
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x90 (144)
+
+=== Teste 20 (ADD) ===
+Cálculo: 0xcd + 0x60 = 0x2d (com carry)
+Valores em decimal:
+A = 205, B = 96, Resultado esperado = 45
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x2d (45)
+
+=== Teste 21 (ADD) ===
+Cálculo: 0xec + 0x2b = 0x17 (com carry)
+Valores em decimal:
+A = 236, B = 43, Resultado esperado = 23
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x17 (23)
+
+=== Teste 22 (ADD) ===
+Cálculo: 0xa2 + 0x66 = 0x08 (com carry)
+Valores em decimal:
+A = 162, B = 102, Resultado esperado = 8
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x08 (8)
+
+=== Teste 23 (ADD) ===
+Cálculo: 0xfc + 0x95 = 0x91 (com carry)
+Valores em decimal:
+A = 252, B = 149, Resultado esperado = 145
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0x91 (145)
+
+=== Teste 24 (ADD) ===
+Cálculo: 0xdb + 0xd9 = 0xb4 (com carry)
+Valores em decimal:
+A = 219, B = 217, Resultado esperado = 180
+Tempo de execução: 10.00 ns ns
+*** Operação com carry/overflow ***
+Status:     OK
+Resultado obtido: 0xb4 (180)
+
+=== Teste 25 (SUB) ===
+Cálculo: 0xae - 0x53 = 0x5b (sem carry)
+Valores em decimal:
+A = 174, B = 83, Resultado esperado = 91
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x5b (91)
+
+=== Teste 26 (SUB) ===
+Cálculo: 0x99 - 0x37 = 0x62 (sem carry)
+Valores em decimal:
+A = 153, B = 55, Resultado esperado = 98
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x62 (98)
+
+=== Teste 27 (SUB) ===
+Cálculo: 0x03 - 0x01 = 0x02 (sem carry)
+Valores em decimal:
+A = 3, B = 1, Resultado esperado = 2
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x02 (2)
+
+=== Teste 28 (SUB) ===
+Cálculo: 0x2d - 0x25 = 0x08 (sem carry)
+Valores em decimal:
+A = 45, B = 37, Resultado esperado = 8
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x08 (8)
+
+=== Teste 29 (SUB) ===
+Cálculo: 0x8b - 0x49 = 0x42 (sem carry)
+Valores em decimal:
+A = 139, B = 73, Resultado esperado = 66
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x42 (66)
+
+=== Teste 30 (SUB) ===
+Cálculo: 0x7d - 0x26 = 0x57 (sem carry)
+Valores em decimal:
+A = 125, B = 38, Resultado esperado = 87
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x57 (87)
+
+=== Teste 31 (SUB) ===
+Cálculo: 0x4d - 0x0e = 0x3f (sem carry)
+Valores em decimal:
+A = 77, B = 14, Resultado esperado = 63
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x3f (63)
+
+=== Teste 32 (SUB) ===
+Cálculo: 0x42 - 0x2c = 0x16 (sem carry)
+Valores em decimal:
+A = 66, B = 44, Resultado esperado = 22
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x16 (22)
+
+=== Teste 33 (SUB) ===
+Cálculo: 0x09 - 0x03 = 0x06 (sem carry)
+Valores em decimal:
+A = 9, B = 3, Resultado esperado = 6
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x06 (6)
+
+=== Teste 34 (SUB) ===
+Cálculo: 0xa2 - 0x57 = 0x4b (sem carry)
+Valores em decimal:
+A = 162, B = 87, Resultado esperado = 75
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x4b (75)
+
+=== Teste 35 (SUB) ===
+Cálculo: 0x57 - 0x33 = 0x24 (sem carry)
+Valores em decimal:
+A = 87, B = 51, Resultado esperado = 36
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x24 (36)
+
+=== Teste 36 (SUB) ===
+Cálculo: 0x82 - 0x30 = 0x52 (sem carry)
+Valores em decimal:
+A = 130, B = 48, Resultado esperado = 82
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x52 (82)
+
+=== Teste 37 (SUB) ===
+Cálculo: 0x9a - 0x4b = 0x4f (sem carry)
+Valores em decimal:
+A = 154, B = 75, Resultado esperado = 79
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x4f (79)
+
+=== Teste 38 (SUB) ===
+Cálculo: 0xff - 0xce = 0x31 (sem carry)
+Valores em decimal:
+A = 255, B = 206, Resultado esperado = 49
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x31 (49)
+
+=== Teste 39 (SUB) ===
+Cálculo: 0xd1 - 0x3c = 0x95 (sem carry)
+Valores em decimal:
+A = 209, B = 60, Resultado esperado = 149
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x95 (149)
+
+=== Teste 40 (SUB) ===
+Cálculo: 0xf4 - 0xd4 = 0x20 (sem carry)
+Valores em decimal:
+A = 244, B = 212, Resultado esperado = 32
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x20 (32)
+
+=== Teste 41 (SUB) ===
+Cálculo: 0x3b - 0x35 = 0x06 (sem carry)
+Valores em decimal:
+A = 59, B = 53, Resultado esperado = 6
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x06 (6)
+
+=== Teste 42 (SUB) ===
+Cálculo: 0x0b - 0x09 = 0x02 (sem carry)
+Valores em decimal:
+A = 11, B = 9, Resultado esperado = 2
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x02 (2)
+
+=== Teste 43 (SUB) ===
+Cálculo: 0x53 - 0x35 = 0x1e (sem carry)
+Valores em decimal:
+A = 83, B = 53, Resultado esperado = 30
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x1e (30)
+
+=== Teste 44 (SUB) ===
+Cálculo: 0x9d - 0x54 = 0x49 (sem carry)
+Valores em decimal:
+A = 157, B = 84, Resultado esperado = 73
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x49 (73)
+
+=== Teste 45 (SUB) ===
+Cálculo: 0x75 - 0x66 = 0x0f (sem carry)
+Valores em decimal:
+A = 117, B = 102, Resultado esperado = 15
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x0f (15)
+
+=== Teste 46 (SUB) ===
+Cálculo: 0x73 - 0x58 = 0x1b (sem carry)
+Valores em decimal:
+A = 115, B = 88, Resultado esperado = 27
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x1b (27)
+
+=== Teste 47 (SUB) ===
+Cálculo: 0x75 - 0x1e = 0x57 (sem carry)
+Valores em decimal:
+A = 117, B = 30, Resultado esperado = 87
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x57 (87)
+
+=== Teste 48 (SUB) ===
+Cálculo: 0x96 - 0x6f = 0x27 (sem carry)
+Valores em decimal:
+A = 150, B = 111, Resultado esperado = 39
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x27 (39)
+
+=== Teste 49 (SUB) ===
+Cálculo: 0xc4 - 0x30 = 0x94 (sem carry)
+Valores em decimal:
+A = 196, B = 48, Resultado esperado = 148
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x94 (148)
+
+=== Teste 50 (MUL) ===
+Cálculo: 0x43 * 0x1f = 0x1d (sem carry)
+Valores em decimal:
+A = 67, B = 31, Resultado esperado = 29
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x1d (29)
+
+=== Teste 51 (MUL) ===
+Cálculo: 0x9e * 0x10 = 0xe0 (sem carry)
+Valores em decimal:
+A = 158, B = 16, Resultado esperado = 224
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xe0 (224)
+
+=== Teste 52 (MUL) ===
+Cálculo: 0x43 * 0x3f = 0x7d (sem carry)
+Valores em decimal:
+A = 67, B = 63, Resultado esperado = 125
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x7d (125)
+
+=== Teste 53 (MUL) ===
+Cálculo: 0x8b * 0x47 = 0x8d (sem carry)
+Valores em decimal:
+A = 139, B = 71, Resultado esperado = 141
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x8d (141)
+
+=== Teste 54 (MUL) ===
+Cálculo: 0x0e * 0x03 = 0x2a (sem carry)
+Valores em decimal:
+A = 14, B = 3, Resultado esperado = 42
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x2a (42)
+
+=== Teste 55 (MUL) ===
+Cálculo: 0x1f * 0x0d = 0x93 (sem carry)
+Valores em decimal:
+A = 31, B = 13, Resultado esperado = 147
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x93 (147)
+
+=== Teste 56 (MUL) ===
+Cálculo: 0xb2 * 0x3a = 0x54 (sem carry)
+Valores em decimal:
+A = 178, B = 58, Resultado esperado = 84
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x54 (84)
+
+=== Teste 57 (MUL) ===
+Cálculo: 0xe0 * 0x1d = 0x60 (sem carry)
+Valores em decimal:
+A = 224, B = 29, Resultado esperado = 96
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x60 (96)
+
+=== Teste 58 (MUL) ===
+Cálculo: 0x3c * 0x28 = 0x60 (sem carry)
+Valores em decimal:
+A = 60, B = 40, Resultado esperado = 96
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x60 (96)
+
+=== Teste 59 (MUL) ===
+Cálculo: 0x72 * 0x17 = 0x3e (sem carry)
+Valores em decimal:
+A = 114, B = 23, Resultado esperado = 62
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x3e (62)
+
+=== Teste 60 (MUL) ===
+Cálculo: 0x0b * 0x0b = 0x79 (sem carry)
+Valores em decimal:
+A = 11, B = 11, Resultado esperado = 121
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x79 (121)
+
+=== Teste 61 (MUL) ===
+Cálculo: 0xe1 * 0xd2 = 0x92 (sem carry)
+Valores em decimal:
+A = 225, B = 210, Resultado esperado = 146
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x92 (146)
+
+=== Teste 62 (MUL) ===
+Cálculo: 0xba * 0x8a = 0x44 (sem carry)
+Valores em decimal:
+A = 186, B = 138, Resultado esperado = 68
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x44 (68)
+
+=== Teste 63 (MUL) ===
+Cálculo: 0x53 * 0x02 = 0xa6 (sem carry)
+Valores em decimal:
+A = 83, B = 2, Resultado esperado = 166
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xa6 (166)
+
+=== Teste 64 (MUL) ===
+Cálculo: 0xb3 * 0x44 = 0x8c (sem carry)
+Valores em decimal:
+A = 179, B = 68, Resultado esperado = 140
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x8c (140)
+
+=== Teste 65 (MUL) ===
+Cálculo: 0x05 * 0x04 = 0x14 (sem carry)
+Valores em decimal:
+A = 5, B = 4, Resultado esperado = 20
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x14 (20)
+
+=== Teste 66 (MUL) ===
+Cálculo: 0x0e * 0x01 = 0x0e (sem carry)
+Valores em decimal:
+A = 14, B = 1, Resultado esperado = 14
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x0e (14)
+
+=== Teste 67 (MUL) ===
+Cálculo: 0x7e * 0x3b = 0x0a (sem carry)
+Valores em decimal:
+A = 126, B = 59, Resultado esperado = 10
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x0a (10)
+
+=== Teste 68 (MUL) ===
+Cálculo: 0xf5 * 0x1c = 0xcc (sem carry)
+Valores em decimal:
+A = 245, B = 28, Resultado esperado = 204
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xcc (204)
+
+=== Teste 69 (MUL) ===
+Cálculo: 0x35 * 0x2b = 0xe7 (sem carry)
+Valores em decimal:
+A = 53, B = 43, Resultado esperado = 231
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xe7 (231)
+
+=== Teste 70 (MUL) ===
+Cálculo: 0x99 * 0x48 = 0x08 (sem carry)
+Valores em decimal:
+A = 153, B = 72, Resultado esperado = 8
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x08 (8)
+
+=== Teste 71 (MUL) ===
+Cálculo: 0x5a * 0x36 = 0xfc (sem carry)
+Valores em decimal:
+A = 90, B = 54, Resultado esperado = 252
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0xfc (252)
+
+=== Teste 72 (MUL) ===
+Cálculo: 0x20 * 0x12 = 0x40 (sem carry)
+Valores em decimal:
+A = 32, B = 18, Resultado esperado = 64
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x40 (64)
+
+=== Teste 73 (MUL) ===
+Cálculo: 0xd5 * 0xaf = 0x9b (sem carry)
+Valores em decimal:
+A = 213, B = 175, Resultado esperado = 155
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x9b (155)
+
+=== Teste 74 (MUL) ===
+Cálculo: 0x86 * 0x45 = 0x1e (sem carry)
+Valores em decimal:
+A = 134, B = 69, Resultado esperado = 30
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x1e (30)
+
+=== Teste 75 (DIV) ===
+Cálculo: 0xf6 / 0xde = 0x01 (sem carry)
+Valores em decimal:
+A = 246, B = 222, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 76 (DIV) ===
+Cálculo: 0xc2 / 0x79 = 0x01 (sem carry)
+Valores em decimal:
+A = 194, B = 121, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 77 (DIV) ===
+Cálculo: 0x6e / 0x5e = 0x01 (sem carry)
+Valores em decimal:
+A = 110, B = 94, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 78 (DIV) ===
+Cálculo: 0x39 / 0x06 = 0x09 (sem carry)
+Valores em decimal:
+A = 57, B = 6, Resultado esperado = 9
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x09 (9)
+
+=== Teste 79 (DIV) ===
+Cálculo: 0x9b / 0x01 = 0x9b (sem carry)
+Valores em decimal:
+A = 155, B = 1, Resultado esperado = 155
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x9b (155)
+
+=== Teste 80 (DIV) ===
+Cálculo: 0x33 / 0x33 = 0x01 (sem carry)
+Valores em decimal:
+A = 51, B = 51, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 81 (DIV) ===
+Cálculo: 0x5e / 0x15 = 0x04 (sem carry)
+Valores em decimal:
+A = 94, B = 21, Resultado esperado = 4
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x04 (4)
+
+=== Teste 82 (DIV) ===
+Cálculo: 0xab / 0x6b = 0x01 (sem carry)
+Valores em decimal:
+A = 171, B = 107, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 83 (DIV) ===
+Cálculo: 0xdf / 0x6f = 0x02 (sem carry)
+Valores em decimal:
+A = 223, B = 111, Resultado esperado = 2
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x02 (2)
+
+=== Teste 84 (DIV) ===
+Cálculo: 0x25 / 0x06 = 0x06 (sem carry)
+Valores em decimal:
+A = 37, B = 6, Resultado esperado = 6
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x06 (6)
+
+=== Teste 85 (DIV) ===
+Cálculo: 0x3b / 0x2f = 0x01 (sem carry)
+Valores em decimal:
+A = 59, B = 47, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 86 (DIV) ===
+Cálculo: 0xe2 / 0xd9 = 0x01 (sem carry)
+Valores em decimal:
+A = 226, B = 217, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 87 (DIV) ===
+Cálculo: 0xf1 / 0xbc = 0x01 (sem carry)
+Valores em decimal:
+A = 241, B = 188, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 88 (DIV) ===
+Cálculo: 0x4f / 0x3d = 0x01 (sem carry)
+Valores em decimal:
+A = 79, B = 61, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 89 (DIV) ===
+Cálculo: 0x1e / 0x12 = 0x01 (sem carry)
+Valores em decimal:
+A = 30, B = 18, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 90 (DIV) ===
+Cálculo: 0x12 / 0x0b = 0x01 (sem carry)
+Valores em decimal:
+A = 18, B = 11, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 91 (DIV) ===
+Cálculo: 0xd0 / 0x7b = 0x01 (sem carry)
+Valores em decimal:
+A = 208, B = 123, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 92 (DIV) ===
+Cálculo: 0x8b / 0x0f = 0x09 (sem carry)
+Valores em decimal:
+A = 139, B = 15, Resultado esperado = 9
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x09 (9)
+
+=== Teste 93 (DIV) ===
+Cálculo: 0xe7 / 0xe1 = 0x01 (sem carry)
+Valores em decimal:
+A = 231, B = 225, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 94 (DIV) ===
+Cálculo: 0x79 / 0x6b = 0x01 (sem carry)
+Valores em decimal:
+A = 121, B = 107, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 95 (DIV) ===
+Cálculo: 0xe9 / 0x0f = 0x0f (sem carry)
+Valores em decimal:
+A = 233, B = 15, Resultado esperado = 15
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x0f (15)
+
+=== Teste 96 (DIV) ===
+Cálculo: 0x09 / 0x08 = 0x01 (sem carry)
+Valores em decimal:
+A = 9, B = 8, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 97 (DIV) ===
+Cálculo: 0xbc / 0xad = 0x01 (sem carry)
+Valores em decimal:
+A = 188, B = 173, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 98 (DIV) ===
+Cálculo: 0xd4 / 0xd3 = 0x01 (sem carry)
+Valores em decimal:
+A = 212, B = 211, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Teste 99 (DIV) ===
+Cálculo: 0xb0 / 0x84 = 0x01 (sem carry)
+Valores em decimal:
+A = 176, B = 132, Resultado esperado = 1
+Tempo de execução: 10.00 ns ns
+Status:     OK
+Resultado obtido: 0x01 (1)
+
+=== Relatório Final - 2025-02-23 19:56:07 ===
+Usuário: jaquedebrito
+
+Estatísticas de Testes:
+Total de testes: 100
+Adições: 25
+Subtrações: 25
+Multiplicações: 25
+Divisões: 25
+Operações Inválidas: 0
+
+=== Relatório de Desempenho ===
+Tempo mínimo de operação: 10.00 ns
+Tempo máximo de operação: 10.00 ns
+Tempo médio de operação: 10.00 ns
+Total de operações: 100
+
+=== Estatísticas de Erro ===
+Operações inválidas: 0
+Violações de timing: 0
+Erros de overflow: 0
+Violações A < B: 0
+Divisões por zero: 0
+Resultados incorretos: 0
+Carrys incorretos: 0
+Valores desconhecidos: 0
+Erros de formato de vetor: 0
+
+=== Erros Adicionais ===
+Violações de setup: 0
+Violações de hold: 0
+Erros de estabilidade: 0
+Erros de reset: 0
+Violações de desempenho: 0
+
+=== Estatísticas de Timing ===
+Total de violações de timing: 0
+Última operação completada em: 2025.00 ns
+
+Testbench concluído em           2025.00 ns
+Simulation complete via $finish(1) at time 2045 NS + 0
+./ULA_test_vectors_tb.sv:314         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Apr 30, 2025 at 14:46:41 -03  (total: 00:00:35)
