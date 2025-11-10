@@ -1,0 +1,74 @@
+# SystemVerilog/Verilog Simulation Files
+*.vcd
+*.wlf
+*.log
+*.history
+*.vstf
+*.shm
+*.diag
+*.key
+*.fsdb
+*.vpd
+
+# EDA Tool Specific
+# Cadence
+xrun.log
+xcelium.d/
+INCA_libs/
+*.trn
+*.dsn
+cds.lib
+hdl.var
+.simvision/
+
+# Synopsys
+simv
+simv.daidir/
+csrc/
+ucli.key
+DVEfiles/
+work/
+*.vdb
+
+# Mentor Graphics (Siemens)
+work/
+transcript
+vsim.wlf
+*.mti
+*.mpf
+modelsim.ini
+
+# Vivado
+.Xil/
+*.jou
+*.pb
+*.wdb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+*.egg-info/
+dist/
+build/
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
